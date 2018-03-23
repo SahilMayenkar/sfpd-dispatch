@@ -1,0 +1,41 @@
+body::before {
+    background-size: cover;
+    background-attachment: fixed;
+    content: '';
+    will-change: transform;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    background-image: url('http://www.vijesti.me/media/cache/c5/bf/c5bfe096d87bfc7ba14adbd2ef3e2670.jpg');
+}
+
+/*
+.mdl-layout__content {
+    flex: 1 0 auto;
+}
+
+.mdl-mini-footer {
+    flex: 0 0 auto;
+}
+*/
+
+.mdl-card {
+    width: 100%;
+}
+
+.mdl-grid {
+    max-width: 1200px
+}
+
+#view-source {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 50px;
+    margin-bottom: 150px;
+    z-index: 900;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-indigo.min.css" />
+		<script src="../static/material.min.js"></script>
+
+		<link rel="stylesheet" href="../static/getmdl-select.min.css">
+		<script src="../static/getmdl-select.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium">
+	</head>
+	<body>
+		<!-- Always shows a header, even in smaller screens. -->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+			    <div class="mdl-layout__header-row">
+			        <!-- Title -->
+			        <span class="mdl-layout-title">Title</span>
+			        <!-- Add spacer, to align navigation to the right -->
+			        <div class="mdl-layout-spacer"></div>
+			        <!-- Navigation. We hide it in small screens. -->
+			        <nav class="mdl-navigation mdl-layout--large-screen-only">
+			        	<a class="mdl-navigation__link" href="">Link</a>
+			        	<a class="mdl-navigation__link" href="">Link</a>
+			        	<a class="mdl-navigation__link" href="">Link</a>
+			        	<a class="mdl-navigation__link" href="">Link</a>
+			        </nav>
+			    </div>
+			</header>
+			<div class="mdl-layout__drawer">
+			    <span class="mdl-layout-title">Title</span>
+			    <nav class="mdl-navigation">
+			        <a class="mdl-navigation__link" href="">Link</a>
+			        <a class="mdl-navigation__link" href="">Link</a>
+			        <a class="mdl-navigation__link" href="">Link</a>
+			        <a class="mdl-navigation__link" href="">Link</a>
+			    </nav>
+			</div>
+			<main class="mdl-layout__content">
+				<div class="page-content">
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--12-col">
+							<div class="mdl-card mdl-shadow--16dp">
+								
+							</div>
+						</div>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--4-col">
+							<div class="mdl-card mdl-shadow--16dp" style="height: 500px">
+								
+							</div>
+						</div>
+						<div class="mdl-cell mdl-cell--4-col">
+							<div class="mdl-card mdl-shadow--16dp" style="height: 500px">
+								
+							</div>
+						</div>
+						<div class="mdl-cell mdl-cell--4-col">
+							<div class="mdl-card mdl-shadow--16dp" style="height: 500px">
+								
+							</div>
+						</div>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--12-col">
+							<div class="mdl-card mdl-shadow--16dp">
+								<div class="mdl-card__title">
+									<h2 class="mdl-card__title-text">Most Likely Dispatch Prediction</h2>
+								</div>
+								<div class="mdl-card__supporting-text">
+									<form action="#">
+										<div class="mdl-textfield mdl-js-textfield">
+											<input class="mdl-textfield__input" type="text" id="address">
+											<label class="mdl-textfield__label" for="address">Address</label>
+											<script>
+												var placeSearch, autocomplete;
+
+												function initAutocomplete() {
+													var defaultBounds = new google.maps.LatLngBounds(
+														new google.maps.LatLng(37.696893, -122.531072),
+														new google.maps.LatLng(37.850971, -122.356148));
+
+													var input = document.getElementById('address');
+													var options = {
+														bounds: defaultBounds,
+													};
+													autocomplete = new google.maps.places.Autocomplete(input, options);
+													autocomplete.setOptions({strictBounds: true})
+												}
+											</script>
+											<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7jKuqDrsirrblx-9eM3mY86rAMjkXNUQ&libraries=places&callback=initAutocomplete" async defer></script>
+										</div>
+									</form>
+								</div>
+								<div class="mdl-card__actions mdl-card--border">
+									<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Calculate</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Select with fixed height -->
+				    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+				        <input type="text" value="" class="mdl-textfield__input" id="hour" readonly>
+				        <input type="hidden" value="" name="hour">
+				        <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+				        <label for="hour" class="mdl-textfield__label">Hour</label>
+				        <ul for="hour" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">1</li>
+							<li class="mdl-menu__item">2</li>
+							<li class="mdl-menu__item">3</li>
+							<li class="mdl-menu__item">4</li>
+							<li class="mdl-menu__item">5</li>
+							<li class="mdl-menu__item">6</li>
+							<li class="mdl-menu__item">7</li>
+							<li class="mdl-menu__item">8</li>
+							<li class="mdl-menu__item">9</li>
+							<li class="mdl-menu__item">10</li>
+							<li class="mdl-menu__item">11</li>
+							<li class="mdl-menu__item">12</li>
+						</ul>
+					</div>
+					<a href="https://github.com/SahilMayenkar/sfpd-dispatch" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">View Source Code</a>
+				</div>
+			</main>
+			<footer class="mdl-mini-footer">
+				<div class="mdl-mini-footer__left-section">
+					© Sahil Mayenkar 2018 • All rights reserved.
+				</div>
+				<div class="mdl-mini-footer__right-section">
+					Made with ❤ for the Capital One Software Engineering Summit Challenge 
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
