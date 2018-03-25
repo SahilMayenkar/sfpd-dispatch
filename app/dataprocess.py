@@ -1,29 +1,28 @@
 import pandas as pd
 import os
-from datetime import timedelta
 from config import basedir
 
 data = pd.read_csv(os.path.join(basedir,"app/data/sfpd_dispatch_data_subset.csv"), low_memory=False)
 
 indices = data.index.get_values()
-callTypeCount = {}
+callTypeCounts = {}
 watchDateCount = {}
 timeDiffs = {
-        "received-entry": [],
-        "entry-dispatch": [],
-        "dispatch-response": [],
-        "response-on_scene": [],
-        "on_scene-transport": [],
-        "transport-hospital": []
+        "Data Entry": [],
+        "Dispatch to Unit": [],
+        "Unit Acknowledgement": [],
+        "Arrive on Scene": [],
+        "Begin Transport to Hospital": [],
+        "Arrive at Hospital": []
     }
 
 for i in indices:
     currentType = data.loc[i,:].values[3]
-    if currentType in callTypeCount:
-        callTypeCount[currentType] += 1
+    if currentType in callTypeCounts:
+        callTypeCounts[currentType] += 1
     else:
         if not pd.isnull(currentType):
-            callTypeCount[currentType] = 1
+            callTypeCounts[currentType] = 1
 
     currentDate = data.loc[i,:].values[5]
     if currentDate in watchDateCount:
