@@ -1,7 +1,7 @@
 from flask import render_template, jsonify, request
 from app import app
 from datetime import timedelta
-from app.dataprocess import callTypeCounts, timeDiffs, watchDateCount
+from app.dataprocess import callTypeCounts, timeDiffs, watchDateCount,zipCodeTops
 from app.predict import predict
 import sys
 
@@ -11,7 +11,8 @@ def home():
                            callTypeCounts=callTypeCounts,
                            timeDiffs=timeDiffs,
                            watchDateCount=watchDateCount,
-                           timedelta=timedelta)
+                           timedelta=timedelta,
+                           zipCodeTops=zipCodeTops)
 
 @app.route('/predict', methods=['POST'])
 def predict_dispatch():

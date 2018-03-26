@@ -1,13 +1,13 @@
 import pandas as pd
 from math import sin, cos, asin, acos, radians
 from datetime import datetime, time
-from app.dataprocess import data, indices
+from app.dataprocess import data
 import sys
 
 def predict(latitude, longitude, timestr):
     inputTime = format_time(timestr)
     unitTypeCounts = {}
-    for i in indices:
+    for i in data.index.get_values():
         currentLat = data.loc[i,:].values[34]
         currentLng = data.loc[i,:].values[35]
         if not (pd.isnull(currentLat) or pd.isnull(currentLng)):

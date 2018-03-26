@@ -30,6 +30,7 @@
 			google.charts.setOnLoadCallback(drawChart1);
 			google.charts.setOnLoadCallback(drawChart2);
 			google.charts.setOnLoadCallback(drawChart3);
+			google.charts.setOnLoadCallback(drawChart4);
 
 			// Callback that creates and populates a data table,
 			// instantiates the pie chart, passes in the data and
@@ -109,10 +110,34 @@
 				chart3.draw(data, options);
 			}
 
+			function drawChart4() {
+				
+				// Create the data table.
+				var data = new google.visualization.DataTable();
+				data.addColumn('string', 'Zip Code')
+				data.addColumn('number', 'Time (minutes)');
+
+				data.addRows([
+						{% for i in range(4) %}
+							['{{ zipCodeTops[i][0] }}', {{ zipCodeTops[i][1] }}],
+						{% endfor %}
+					]);
+
+				// Set chart options
+				var options = {
+					'legend': 'bottom'
+				};
+				
+				// Instantiate and draw our chart, passing in some options.
+				var chart4 = new google.visualization.BarChart(document.getElementById('chart4_div'));
+				chart4.draw(data, options);
+			}
+
 			$(window).resize(function(){
 				drawChart1();
 				drawChart2();
 				drawChart3();
+				drawChart4();
 			});
 		</script>
 	</head>
@@ -127,32 +152,32 @@
 			        <div class="mdl-layout-spacer"></div>
 			        <!-- Navigation. We hide it in small screens. -->
 			        <nav class="mdl-navigation mdl-layout--large-screen-only">
-			        	<a class="mdl-navigation__link" href="">Link</a>
-			        	<a class="mdl-navigation__link" href="">Link</a>
-			        	<a class="mdl-navigation__link" href="">Link</a>
-			        	<a class="mdl-navigation__link" href="">Link</a>
+			        	<a class="mdl-navigation__link" href="#intro">Intro</a>
+			        	<a class="mdl-navigation__link" href="#interesting-metrics">Interesting Metrics</a>
+			        	<a class="mdl-navigation__link" href="#dispatch-predictor">Dispatch Predictor</a>
+			        	<a class="mdl-navigation__link" href="#longest-times">Longest Times</a>
 			        </nav>
 			    </div>
 			</header>
 			<div class="mdl-layout__drawer">
 			    <span class="mdl-layout-title">Contents</span>
 			    <nav class="mdl-navigation">
-			        <a class="mdl-navigation__link" href="">Link</a>
-			        <a class="mdl-navigation__link" href="">Link</a>
-			        <a class="mdl-navigation__link" href="">Link</a>
-			        <a class="mdl-navigation__link" href="">Link</a>
+			        <a class="mdl-navigation__link" href="#intro">Intro</a>
+		        	<a class="mdl-navigation__link" href="#interesting-metrics">Interesting Metrics</a>
+		        	<a class="mdl-navigation__link" href="#dispatch-predictor">Dispatch Predictor</a>
+		        	<a class="mdl-navigation__link" href="#longest-times">Longest Times</a>
 			    </nav>
 			</div>
 			<main class="mdl-layout__content">
 				<div class="page-content">
-					<div class="mdl-grid">
+					<div class="mdl-grid" id="intro">
 						<div class="mdl-cell mdl-cell--12-col">
 							<div class="mdl-card mdl-shadow--16dp">
 								
 							</div>
 						</div>
 					</div>
-					<div class="mdl-grid">
+					<div class="mdl-grid" id="interesting-metrics">
 						<div class="mdl-cell mdl-cell--4-col">
 							<div class="mdl-card mdl-shadow--16dp" style="height: 500px">
 								<div class="mdl-card__title">
@@ -193,7 +218,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="mdl-grid">
+					<div class="mdl-grid" id="dispatch-predictor">
 						<div class="mdl-cell mdl-cell--12-col">
 							<div class="mdl-card mdl-shadow--16dp">
 								<div class="mdl-card__title">
@@ -255,6 +280,21 @@
 										<div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active" id="predict-load"></div>
 										<p id="prediction-text">PREDICTION: ----- </p>
 									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--12-col">
+							<div class="mdl-card mdl-shadow--16dp">
+								<div class="mdl-card__title">
+									<h2 class="mdl-card__title-text">Areas that Have Longest Dispatch Times</h2>
+								</div>
+								<div class="mdl-card__supporting-text">
+									<div id="chart4_div" style="width: 100%; height: 400px"></div>
+								</div>
+								<div class="mdl-card__actions mdl-card--border">
+									<p>An enticing explanation of that goes here</p>
 								</div>
 							</div>
 						</div>
