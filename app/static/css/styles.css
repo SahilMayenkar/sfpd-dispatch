@@ -33,3 +33,33 @@ body::before {
     margin-bottom: 40px;
     z-index: 900;
 }
+
+#prediction-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 760px) {
+    #address-field {
+        display: inline-block;
+    }
+
+    #time-field {
+        display: inline-block;
+        margin-left: 30px;
+    }
+}
+
+#prediction-display {
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+#prediction-text {
+    line-height: 36px;
+    margin-bottom: 0px;
+}
+
+#predict-load {
+    display: none;
+}
