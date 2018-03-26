@@ -173,13 +173,18 @@
 					<div class="mdl-grid" id="intro">
 						<div class="mdl-cell mdl-cell--12-col">
 							<div class="mdl-card mdl-shadow--16dp">
-								
+								<div class="mdl-card__title">
+									<h2 class="mdl-card__title-text">Introduction</h2>
+								</div>
+								<div class="mdl-card__supporting-text">
+									Welcome to SFPD Dispatch: Predictor and Analyzer! This web app was created as part of the Capital One Software Engineering Summit MindSumo Challenge for Spring 2018. It uses public dispatch data from the San Francisco Fire Department to display various interesting metrics and trends and to predict at a given location and time what dispatch units are most likely to be needed. 
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="mdl-grid" id="interesting-metrics">
 						<div class="mdl-cell mdl-cell--4-col">
-							<div class="mdl-card mdl-shadow--16dp" style="height: 500px">
+							<div class="mdl-card mdl-shadow--16dp stats">
 								<div class="mdl-card__title">
 									<h2 class="mdl-card__title-text">Distribution of Call Types</h2>
 								</div>
@@ -187,12 +192,12 @@
 									<div id="chart1_div" style="width: 100%; height: 300px"></div>
 								</div>
 								<div class="mdl-card__actions mdl-card--border">
-									<p>An enticing explanation of that goes here</p>
+									<p>This graph shows that medical incidents overwhelmingly account for the majority of calls coming in to the emergency call center. In addition, while there are over a dozen call types, only a handful seem to occur on a regular basis.</p>
 								</div>
 							</div>
 						</div>
 						<div class="mdl-cell mdl-cell--4-col">
-							<div class="mdl-card mdl-shadow--16dp" style="height: 500px">
+							<div class="mdl-card mdl-shadow--16dp stats">
 								<div class="mdl-card__title">
 									<h2 class="mdl-card__title-text">Average Response Time</h2>
 								</div>
@@ -200,12 +205,12 @@
 									<div id="chart2_div" style="width: 100%; height: 300px"></div>
 								</div>
 								<div class="mdl-card__actions mdl-card--border">
-									<p>An enticing explanation of that goes here</p>
+									<p>Above is a stacked column chart that displays the average response time of each task involved in sending out a unit to an incident. Only when data was relevant from a particular call type was it included with a particular activity shown above. It was particularly suprising how long incidents that required travel to the hospital took on average.</p>
 								</div>
 							</div>
 						</div>
 						<div class="mdl-cell mdl-cell--4-col">
-							<div class="mdl-card mdl-shadow--16dp" style="height: 500px">
+							<div class="mdl-card mdl-shadow--16dp stats">
 								<div class="mdl-card__title">
 									<h2 class="mdl-card__title-text">Calls Volume Over Time</h2>
 								</div>
@@ -213,7 +218,7 @@
 									<div id="chart3_div" style="width: 100%; height: 300px"></div>
 								</div>
 								<div class="mdl-card__actions mdl-card--border">
-									<p>An enticing explanation of that goes here</p>
+									<p>Above is a line graph that shows how call volume has changed on a day to day basis. While it may seem there is a sudden spike on the first day, I do not believe this is significant because collection of the data only started towards the end of the day. This could also be applied to the last day, but to a lesser extent. In general, while there is some variance in call volume, it mostly seems to be relatively stable, with a cycle of some increased and decreased volumes.</p>
 								</div>
 							</div>
 						</div>
@@ -294,7 +299,7 @@
 									<div id="chart4_div" style="width: 100%; height: 400px"></div>
 								</div>
 								<div class="mdl-card__actions mdl-card--border">
-									<p>An enticing explanation of that goes here</p>
+									<p>In this graph, the average time in minutes for a dispatch unit to get on site after being assigned to and accepting an incident is shown. The top 3 bars represent the zip codes that take the longest for emergency personnel to reach. The average time for all location in San Francisco is provided below that. It is evident that the top location takes nearly twice as long to reach over the average time. To mitigate the longer times, it is recommended that the government expand the locations of police and fire stations, as well as assign additional units to these areas.</p>
 								</div>
 							</div>
 						</div>
